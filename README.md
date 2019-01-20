@@ -1,4 +1,4 @@
-
+![e-commerce](result.png)
 ## Main commands
 ``` bash
 # Install the dependencies
