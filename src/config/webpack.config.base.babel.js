@@ -6,12 +6,13 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 export default {
     entry: {
+        'style': path.resolve(__dirname, '../stylesheets/', 'listingPage.scss'),
         'vendor': [
             'react',
             'react-dom',
             'react-router'
         ],
-        'client': path.resolve(__dirname, '../init/', 'client.js')
+        'client': path.resolve(__dirname, '../init/', 'client.js'),
     },
 
     output: {

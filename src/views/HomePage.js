@@ -1,19 +1,13 @@
 import React from 'react';
 import Card from '../components/card/Card';
 import { connect } from 'react-redux';
-import '../stylesheets/listingPage.scss';
 
- class HomePage extends React.Component {
+class HomePage extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  componentWillReceiveProps(props) {
-    console.log('will receive', props);
-  }
-
   render() {
-    console.log('props in home page', this.props.products);
     return (
       <div className='container'>
         {
@@ -32,7 +26,6 @@ import '../stylesheets/listingPage.scss';
 
 
 const mapStateToProps = (state) => {
-  console.log('state', state);
   return {
     products: state.products
   }

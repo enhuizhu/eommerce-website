@@ -19,8 +19,6 @@ const store = createStore(rootReducer, {
   products: require('../api/products.json')
 });
 
-console.log('stroe state', store.getState());
-
 const ONE_YEAR_IN_MILLIS = 31557600000;
 const APP_PORT_NUM = process.env.PORT || 3000;
 const app = express();

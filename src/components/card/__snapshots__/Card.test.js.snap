@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test card component renders correctly 1`] = `
+<div
+  className="card"
+>
+  <div
+    className="product-img"
+  >
+    <img
+      alt="Simple Canvas"
+      src="/dist/images/product.jpg"
+    />
+  </div>
+  <div
+    className="label-container"
+  >
+    <label>
+      bestseller
+    </label>
+  </div>
+  <div
+    className="product-detail"
+  >
+    <div
+      className="product-title bold"
+    >
+      Simple Canvas
+    </div>
+    <div
+      className="product-description"
+    >
+      Lets your pictures speak for themselves.
+    </div>
+    <div
+      className="product-price"
+    >
+      From
+      <label
+        className="bold"
+      >
+        £1500
+      </label>
+    </div>
+    <a
+      href="/random/link/to/no/where"
+    >
+      <div
+        className="btn cta-btn bold"
+      >
+        Shop Now
+      </div>
+    </a>
+  </div>
+</div>
+`;
