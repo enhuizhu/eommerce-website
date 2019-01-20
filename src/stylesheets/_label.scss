@@ -1,0 +1,11 @@
+.label-container {
+  label {
+    display: inline-block;
+    padding: 5px 17px;
+    background-color: $label-bg-color;
+    color: $primary-color;
+    font-size: 15px;
+    min-height: 27px;
+    min-width: 100px;
+  }
+}

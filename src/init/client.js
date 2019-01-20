@@ -1,19 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, browserHistory } from 'react-router';
-
+import store from '../store/store';
 import routes from '../routes';
+import { Provider } from 'react-redux';
 
 require('offline-plugin/runtime').install();
 
+const provider = <Provider store = {store}>
+    <Router routes={routes} history={browserHistory}/>
+</Provider>;
+
+
 ReactDOM.render(
-    <Router routes={routes} history={browserHistory}/>,
+    provider,
     document.getElementById('app')
 );
 
 if(module.hot) {
     module.hot.accept(
-        <Router routes={routes} history={browserHistory}/>,
+        provider,
         document.getElementById('app')
     );
 }

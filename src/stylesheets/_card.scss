@@ -1,0 +1,36 @@
+.card {
+  border: solid 1px rgba($main-text-color, 0.3);
+  margin: 16px auto;
+  width: 304px;
+
+  .product-img {
+    img {
+      width: 100%;
+    }
+  }
+
+  .product-detail {
+    padding: 15px;
+
+    .product-title {
+      font-size: 22px;
+    }
+
+    .product-description {
+      line-height: 1.7;
+      margin: 26px 0;
+      height: 79px;
+    }
+
+    .product-price {
+      label {
+        margin-left: 5px;
+        font-size: 22px;
+      }
+    }
+
+    .cta-btn {
+      margin-top: 10px;
+    }
+  }
+}

@@ -8,14 +8,23 @@ import handlebars  from 'express-handlebars';
 import nodeJsx from 'node-jsx';
 import { match, RouterContext } from 'react-router';
 import { renderToString } from 'react-dom/server';
-
+import { Provider } from 'react-redux';
+import { createStore } from 'redux'
+// import { products } from '../reducers/products'; 
+import rootReducer from '../reducers/'
 import api from '../api';
 import routes from '../routes';
 
+const store = createStore(rootReducer, {
+  products: require('../api/products.json')
+});
+
+console.log('stroe state', store.getState());
+
 const ONE_YEAR_IN_MILLIS = 31557600000;
 const APP_PORT_NUM = process.env.PORT || 3000;
-
 const app = express();
+
 
 if (process.env.NODE_ENV === 'development') {
     const webpack = require('webpack');
@@ -80,7 +89,15 @@ app.get('*', (req, res) => {
             res.redirect(302, redirect.pathname + redirect.search);
         } else if (props) {
             res.status(200);
-            res.render('index', { reactOutput: renderToString(<RouterContext {...props} />) });
+            
+            const provider = (<Provider store = {store}>
+                <RouterContext {...props} />
+            </Provider>);
+            
+            res.render('index', { reactOutput: renderToString(provider), storeState: JSON.stringify(store.getState())});
+        } else {
+            res.status(404);
+            res.end('can not find the page you are looking for');
         }
     });
 });
